@@ -157,8 +157,6 @@ def qinmidu(images, texts: list[str], args: Model):
 
     return BuildImage(final_img).save_jpg()
 
-
-
 add_meme(
     "qinmidu",
     qinmidu,
