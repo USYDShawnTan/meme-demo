@@ -158,7 +158,7 @@ def qinmidu(images, texts: list[str], args: Model):
     return BuildImage(final_img).save_jpg()
 
 
-# ================= 注册插件 =================
+
 add_meme(
     "qinmidu",
     qinmidu,
