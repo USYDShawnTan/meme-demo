@@ -9,7 +9,6 @@ class Model(MemeArgsModel):
     """占位"""
     pass
 
-
 args_type = MemeArgsType(
     args_model=Model,
     parser_options=[
@@ -18,7 +17,6 @@ args_type = MemeArgsType(
         ParserOption(names=["无", "默认"], args=[], help_text="随机"),
     ],
 )
-
 
 def qinmidu(images, texts: list[str], args: Model):
     text = texts[0] if texts else "亲密度"
@@ -51,7 +49,6 @@ def qinmidu(images, texts: list[str], args: Model):
         inner_stroke_color = (50, 80, 140)
         outline_color = (156, 195, 252, 255)
 
-    # 直接用 Text2Image（像 5000choyen）
     t2i = Text2Image.from_text(
         text,
         font_size,
@@ -85,7 +82,6 @@ def qinmidu(images, texts: list[str], args: Model):
     final_img = final_img.filter(ImageFilter.GaussianBlur(radius=0.5))
     final_img = ImageEnhance.Color(final_img).enhance(0.98)
     return BuildImage(final_img).save_jpg()
-
 
 
 add_meme(
