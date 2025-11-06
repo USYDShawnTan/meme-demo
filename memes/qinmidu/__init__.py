@@ -73,20 +73,19 @@ def qinmidu(images, texts: list[str], args: Model):
     result = Image.alpha_composite(result, text_img)
 
     # 像素化 + 模糊 + 色彩减淡
-    downscale_factor = 0.15
+    downscale_factor = 0.75 
     w, h = result.size
     small = result.resize((int(w * downscale_factor), int(h * downscale_factor)), Image.BILINEAR)
     pixelated = small.resize((w, h), Image.NEAREST)
 
     buf = io.BytesIO()
-    pixelated.convert("RGB").save(buf, format="JPEG", quality=50)
+    pixelated.convert("RGB").save(buf, format="JPEG", quality=90)  # 提高 JPEG 质量，减少压缩痕迹
     buf.seek(0)
     final_img = Image.open(buf)
-
-    final_img = final_img.filter(ImageFilter.GaussianBlur(radius=2.0))
-    final_img = ImageEnhance.Color(final_img).enhance(0.97)
-
+    final_img = final_img.filter(ImageFilter.GaussianBlur(radius=0.5))
+    final_img = ImageEnhance.Color(final_img).enhance(0.98)
     return BuildImage(final_img).save_jpg()
+
 
 
 add_meme(
