@@ -23,9 +23,6 @@ def iw233(images, texts, args):
 add_meme(
     "iw233",
     iw233,
-    min_texts=0,
-    max_texts=0,
-    default_texts=[],
     keywords=["随机狐狸", "iw233"],
     date_created=datetime(2025, 11, 6),
     date_modified=datetime(2025, 11, 6),
