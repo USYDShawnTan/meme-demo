@@ -32,7 +32,7 @@ add_meme(
     min_texts=0,
     max_texts=1,
     default_texts=["真男人只干男人"],
-    keywords=["企鹅举牌"],
+    keywords=["威廉举牌", "qie"],
     date_created=datetime(2025, 11, 6),
     date_modified=datetime(2025, 11, 6),
 )

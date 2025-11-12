@@ -4,7 +4,7 @@ from random import choice
 from pil_utils import BuildImage
 from meme_generator import add_meme
 
-# === 基础路径 ===
+
 plugin_dir = Path(__file__).parent
 img_dir = plugin_dir / "images"
 
